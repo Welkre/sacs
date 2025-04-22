@@ -1,0 +1,37 @@
+# Semantic Analysis Code Store (SACS)
+
+A repository storage service and version control platform that analyzes the human aspect of your codebase. 
+
+## Features
+
+- Uses its own cli tooling for repository management.
+- Integrates with large language models to index the your repository, and analyze the human readability of your code.
+- Fully manageable storage service in a containerized architecture
+
+## Database
+
+We use a combination of MinIO/AWS S3 for storage and PostgreSQL for metadata. The database is designed to be scalable and efficient, allowing for quick access to large amounts of data.
+- MinIO/AWS S3: Object storage for large files and binary data.
+- PostgreSQL: Relational database for metadata and structured data.
+
+We have a module for managing users and permissions, either in app or with third party services. The module is designed to be flexible and extensible, allowing for easy integration with existing systems. It supports user authentication, authorization, and role-based access control.
+
+### Application User Management
+This section describes the data model for the built in user management system. The user management system is designed to allow mapping from third party services to the internal user management system. This allows for easy integration with existing systems and provides a flexible and extensible solution for managing users and permissions.
+- database: PostgreSQL is used for storing user data, including user profiles, permissions, and roles.
+- authentication: The system supports various authentication methods, including OAuth2, JWT, and custom authentication mechanisms.
+- authorization: Role-based access control (RBAC) is implemented to manage user permissions and access levels within the system.
+- user management: The system provides a user management interface for administrators to manage users, roles, and permissions. This includes creating, updating, and deleting users, as well as assigning roles and permissions.
+- third-party integration: The system supports integration with third-party services for user authentication and management, allowing for seamless integration with existing systems.
+
+### Plugins
+There are plugins for other databases integrations. These are for extended functionality of the system:
+- redis: In-memory data structure store, used as a database, cache, and message broker.
+- elasticsearch: Search engine based on the Lucene library, used for full-text search and analytics.
+
+## Architecture
+
+The architecture of the system is designed to be modular and extensible, allowing for easy integration with existing systems and third-party services. The system is built using a microservices architecture, with each component designed to be independent and scalable. Additionally, we emphasize the use of containerization to enhance deployment flexibility and resource management.
+
+## Future Enhancements
+We plan to implement additional features such as improved monitoring and logging capabilities, as well as enhanced security measures to protect user data and ensure compliance with industry standards. We are also exploring the integration of AI-driven analytics to provide deeper insights into user behavior and system performance.
